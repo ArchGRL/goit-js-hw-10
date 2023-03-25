@@ -12,6 +12,31 @@ body {
   line-height: 1.5;
 }
 
+.country-list {
+  margin-top: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.country-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.country-text {
+  margin: 0;
+}
+
+.country-text-card {
+  font-weight: 900;
+  font-size: 36;
+}
+
+span {
+  font-weight: bold;
+}
+
 #search-box {
   font: inherit;
   padding: 8px;
