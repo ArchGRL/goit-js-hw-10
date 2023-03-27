@@ -45,8 +45,12 @@ const displayCountryCard = countries => {
   countryCardEl.innerHTML = markupCard;
 };
 
-const handleSearchCountries = () => {
-  const nameCountry = inputEl.value.trim();
+const handleSearchCountries = (event) => {
+  const nameCountry = event.target.value.trim();
+  if (nameCountry === '') {
+    clearHTML();
+    return;
+  }
   countryApiService
     .fetchCountries(nameCountry)
     .then(countries => {
@@ -55,7 +59,7 @@ const handleSearchCountries = () => {
           'Too many matches found. Please enter a more specific name.');
         return;
       }
-      if (2 < countries.length <= 10) {
+      if (2 <= countries.length <= 10) {
         displayCountryList(countries);
       }
       if (countries.length === 1) {
